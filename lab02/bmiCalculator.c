@@ -1,6 +1,8 @@
 #include <stdio.h>
 
+//Main function
 int main(void) {
+
     // initialize values
     float weight,height,bmi,bmi5;
 
