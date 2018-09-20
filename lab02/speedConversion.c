@@ -7,14 +7,19 @@
 
 // Main function
 int main(void) {
+
     // Initialize variables
 	float speed,pace;
+
     // Accept input
 	printf("Enter your speed:");
 	scanf("%f", &speed);
+
     // Calculate pace
-	pace = speed/60.0;
+	pace = 60.0f / speed;
+
     // Print pace to screen	
 	printf("The pace is: %f\n", pace); 
+
 	return 0;
 }
