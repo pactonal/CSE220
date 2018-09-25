@@ -7,10 +7,10 @@ int main(void) {
     float weight,height,bmi,bmi5;
 
     // collect user input and store to variables
-    printf("Enter your weight in kg:\n");
+    printf("Enter your weight in kg:");
     scanf("%f",&weight);
 
-    printf("Enter your height in m:\n");
+    printf("Enter your height in m:");
     scanf("%f",&height);
     
     // calculate bmis, store to variables
