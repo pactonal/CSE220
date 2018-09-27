@@ -1,3 +1,12 @@
+/* ****************************************************************************
+* Lab 3 - Computing average temperature in Fahrenheit and Celsius
+*
+* Input five temperatures in Fahrenheit 
+* Compute respective Celsius temps from input
+* Print the average temp in both measurements to three decimal points
+******************************************************************************/
+
+
 #include <stdio.h>
 
 float convert(float);
