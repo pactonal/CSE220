@@ -11,15 +11,16 @@
 *
 * Using the function defined below, the capacitance is calculated and output
 *******************************************************************************/
+
 // Import libraries and define constants as macros
 #include <stdio.h>
-#include <math.h>
-#define e_naught 8.854E-12
-#define pi 3.14159265358979323846 
+#define eNaught 8.854E-12 // Permeativity of free space
+#define pi 3.14159265358979323846 // Pi
 
 // Declare area and capacitance functions
-float calcArea(float);
-float cap(float, float);
+
+float calcArea(float); // Calculates the area of the plates
+float cap(float, float); // Calculates the capacitance given the area and radius
 
 
 // Main function
@@ -38,16 +39,16 @@ int main(void) {
     area = calcArea(radius);
 
     // Output the capacitance to the user in scientific notation
-    printf("\nCapacitance is:%17E %c", cap(area, distance), 'F');
+    printf("Capacitance is: %E %c", cap(area, distance), 'F');
     return 0;
 }
 
 // Define area function
 float calcArea(float r) {
-    return (pi * (powf((r / 100.0), 2.0)));;
+    return (pi * ((r / 100.0) * (r / 100.0)));
 }
 
 // Define capacitance function
 float cap(float A, float d) {
-    return ((e_naught * A) / (d / 1000.0));
+    return ((eNaught * A) / (d / 1000.0));
 }

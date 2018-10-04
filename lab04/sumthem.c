@@ -25,11 +25,10 @@ int main(void) {
     printf("Guess the sum of its digits: ");
     scanf("%d", &guess);
 
-    // Calculate the individual digits of the number
-    dig1 = (number % 10);
-    dig2 = ((number % 100) / 10);
-    dig3 = ((number % 1000) / 100);
-    dig4 = ((number % 10000) / 1000);
+    dig1 = (number % 10); // This will find the first digit 
+    dig2 = ((number % 100) / 10); // This will find the second digit
+    dig3 = ((number % 1000) / 100); // This will find the third digit
+    dig4 = ((number % 10000) / 1000); // This will find the fourth digit
 
     // Calculate the sum of the digits
     sum = dig1 + dig2 + dig3 + dig4;
@@ -37,9 +36,9 @@ int main(void) {
     // Output the sum and the user's score
     printf("The sum is: %4d\n", sum);
     if (guess == sum)
-        printf("Your score is: 1");
+        printf("Your score is: 1"); // 1 is printed if the player guesses right
     else
-        printf("Your score is: 0");
+        printf("Your score is: 0"); // 0 is printed if the player guesses wrong 
 
     return 0;
 }
