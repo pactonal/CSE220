@@ -12,12 +12,13 @@
 * The day of the week is output to the user to see
 *******************************************************************************/
 #include <stdio.h> // The stdio header is required for input/output to the user
-#include <stdlib.h> // The stdlib header is required to use the exit function
 
 
 // Main function
 int main(void) {
+
     int month, day, year, mc; // Initialize variables as integers
+
     // Define a 2d array which holds the days of the week
     char weekdays[7][10] = {
         "Sunday",
@@ -28,6 +29,7 @@ int main(void) {
         "Friday",
         "Saturday"
     };
+
     // Define an array which holds the month coefficients
     char mcValues[12] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
 
@@ -38,25 +40,31 @@ int main(void) {
     // Month is greater than 12 or less than 1
     if (month > 12 || month < 1 ) { 
         printf("Invalid date!"); // Output error message
-        exit(0); // Exit program - defined in stdlib.h
+        return 0; // Exit program 
     }
 
     // Day is greater than 31 or less than 1
     if (day > 31 || day < 1) {
         printf("Invalid date!");
-        exit(0);
+        return 0;
     }
 
     // Day is 31 when month does not have 31 days
     if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31) {
         printf("Invalid date!");
-        exit(0);
+        return 0;
     }
 
     // Day is greater than 28 in February
     if (month == 2 && day > 28) {
         printf("Invalid date!");
-        exit(0);
+        return 0;
+    }
+
+    // Year is a positive value
+    if (year< 0) {
+        printf("Invalid date!");
+        return 0;
     }
 
     mc = mcValues[month - 1]; // Set month coefficient based on input month
