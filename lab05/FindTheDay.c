@@ -20,18 +20,18 @@ int main(void) {
     int month, day, year, mc; // Initialize variables as integers
 
     // Define a 2d array which holds the days of the week
-    char weekdays[7][10] = {
+    /*char weekdays[7][10] = {
         "Sunday",
         "Monday",
-        "Tuesday",
+        "Tuesday",          //Unused now
         "Wednesday",
         "Thursday",
         "Friday",
         "Saturday"
-    };
+    };*/
 
     // Define an array which holds the month coefficients
-    char mcValues[12] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
+    int mcValues[12] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
 
     printf("Enter your birthday (mm/dd/yyyy): "); // User inputs birthday
 
@@ -73,17 +73,37 @@ int main(void) {
     if (month == 1 || month == 2)
         year--;
 
-    // Define a pointer to an array of 10 characters from weekdays array
-    char *dayOfWeek[10] = {*weekdays + (10 * ((year + year / 4 - year / 100
-                             + year / 400 + mc + day) % 7))};
-    /* The pointer dayOfWeek has the xth 10 characters from weekdays stored in
-     * it.  For example.  If the calculation returns 1, that means that monday
-     * is the day that the user was born, so 11th-20th characters from weekdays
-     * is stored in dayOfWeek.*/
+    //
+    //Unused as well
+    //
+    /* Define a pointer to an array of 10 characters from weekdays array
+    char (*dayOfWeek)[10] = {weekdays + ((year + year / 4 - year / 100
+                             + year / 400 + mc + day) % 7)};
+    * The line above "selects" the respective date from the array above
+    *  based on the calculation for the day of the week */
 
-
-    // The day is output to the user
-    printf("You were born on a %s", *dayOfWeek);
-
-    return 0;
+    // Print The day of the week that the calculation returns
+    switch ((year + year / 4 - year / 100 + year / 400 + mc + day) % 7) {
+        case 0:
+            printf("You were born on a Sunday");
+            return 0;
+        case 1:
+            printf("You were born on a Monday");
+            return 0;
+        case 2:
+            printf("You were born on a Tuesday");
+            return 0;
+        case 3:
+            printf("You were born on a Wednesday");
+            return 0;
+        case 4:
+            printf("You were born on a Thursday");
+            return 0;
+        case 5:
+            printf("You were born on a Friday");
+            return 0;
+        case 6:
+            printf("You were born on a Saturday");
+            return 0;
+    }
 }
